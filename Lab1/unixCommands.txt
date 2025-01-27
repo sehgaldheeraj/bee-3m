@@ -1,0 +1,60 @@
+1. pwd
+   - Description: Prints the current working directory (where you are in the file system).
+   - Example:
+     $ pwd
+     /home/user
+
+2. ls
+   - Description: Lists the contents of the current directory.
+   - Example:
+     $ ls
+     file1.txt  file2.txt  folder1
+
+3. cd
+   - Description: Changes the current directory.
+   - Example:
+     $ cd folder1
+     $ pwd
+     /home/user/folder1
+
+4. mkdir
+   - Description: Creates a new directory.
+   - Example:
+     $ mkdir new_folder
+
+5. touch
+   - Description: Creates an empty file or updates the timestamp of an existing file.
+   - Example:
+     $ touch newfile.txt
+
+6. cp
+   - Description: Copies files or directories.
+   - Example:
+     $ cp file1.txt file2.txt
+
+7. mv
+   - Description: Moves or renames files or directories.
+   - Example:
+     $ mv file1.txt folder1/
+
+8. rm
+   - Description: Removes files or directories. Use with caution!
+   - Example:
+     $ rm file1.txt
+
+9. cat
+   - Description: Displays the contents of a file.
+   - Example:
+     $ cat file1.txt
+     Hello, World!
+
+12. echo
+   - Description: Displays a message or outputs text to the terminal.
+   - Example:
+     $ echo "Hello, World!"
+     Hello, World!
+
+13. chmod
+   - Description: Changes file permissions.
+   - Example:
+     $ chmod 755 myscript.sh

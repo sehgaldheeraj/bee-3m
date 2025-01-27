@@ -1,0 +1,76 @@
+1. git init
+   - Description: Initializes a new Git repository in the current directory.
+   - Example:
+     $ git init
+
+2. git clone <repository-url>
+   - Description: Clones a remote repository to your local machine.
+   - Example:
+     $ git clone https://github.com/user/repo.git
+
+3. git status
+   - Description: Shows the current status of the repository (which files are staged, unstaged, or untracked).
+   - Example:
+     $ git status
+
+4. git add <file>
+   - Description: Stages a file (or files) for the next commit.
+   - Example:
+     $ git add file1.txt
+
+5. git commit -m "<message>"
+   - Description: Commits the staged changes to the repository with a message.
+   - Example:
+     $ git commit -m "Initial commit"
+
+6. git push
+   - Description: Pushes your local changes to a remote repository.
+   - Example:
+     $ git push origin main
+
+7. git pull
+   - Description: Fetches and merges changes from the remote repository to your local repository.
+   - Example:
+     $ git pull origin main
+
+8. git branch
+   - Description: Lists all branches in the repository or shows the current branch.
+   - Example:
+     $ git branch
+
+9. git checkout <branch-name>
+   - Description: Switches to a different branch.
+   - Example:
+     $ git checkout feature-branch
+
+10. git merge <branch-name>
+    - Description: Merges the specified branch into the current branch.
+    - Example:
+      $ git merge feature-branch
+
+11. git remote -v
+    - Description: Displays the remote URL(s) associated with the repository.
+    - Example:
+      $ git remote -v
+      origin  https://github.com/user/repo.git (fetch)
+      origin  https://github.com/user/repo.git (push)
+
+12. git log
+    - Description: Displays the commit history of the repository.
+    - Example:
+      $ git log
+
+13. git fetch
+    - Description: Downloads objects and refs from a remote repository but doesn’t merge them automatically.
+    - Example:
+      $ git fetch origin
+
+14. git diff
+    - Description: Shows the differences between the working directory and the index or between commits.
+    - Example:
+      $ git diff
+
+15. git tag <tag-name>
+    - Description: Creates a new tag at the current commit.
+    - Example:
+      $ git tag v1.0
