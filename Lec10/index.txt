@@ -1,0 +1,10 @@
+1. View all DBs - show dbs
+2. View current DB - db
+3. select db or creates new if not exists - use <db_name>
+4. View all collections in DB - show collections
+Delete a collection/DB drop()
+----------------db. functions/commands -------------------
+5. GET all documents   | Select * from <collection> | db.<collection>.find({filter})
+6. CREATE a document(s)   | db.<collection>.insertOne({}) , .insertMany([{}, {}, ...])
+7. UPDATE a document(s)   | db.<collection>.updateOne({{title: "mongo"}, $set:{status: "ongoing"}, }) , .updateMany([{}, {}])
+8. DELETE a document(s)   | db.<collection>.deleteOne({}) | .deleteMany({})
