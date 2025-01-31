@@ -1,19 +1,31 @@
 const express = require("express");
 
 const app = express();
+const Todo = require("./models/model.todos");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.get("/", (req, res) => {
+/**
+ * TASK 1: GET home page
+ */
+app.get("/todo", (req, res) => {
   res.render("index");
 });
-// app.get("/styles.js", (req, res) => {
-//   res.sendFile(path.join(__dirname, ".", "public", "styles.js"));
-// });
+/**
+ * TASK 2: GET allTodos view
+ */
+app.get("/addTodo", (req, res) => {
+  res.render("addTodo");
+});
 
 /**
- * User: name, phone, password, email, role
+ * TASK 3: POST todo
  */
-
+app.post("/todo", (req, res) => {
+  const { name, type, status } = req.body;
+  //add this to DB
+  Task.addTodo(name, type, status);
+  //send response to server
+});
 app.listen(3000, () => {
   console.log("Learning REST arch at 3000");
 });
