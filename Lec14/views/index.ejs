@@ -8,11 +8,11 @@
   </head>
   <body>
     <h1>Todo APP</h1>
-    <a href="/addTodo">Add a Todo</a>
+    <a href="/v1/todo/addTodo">Add a Todo</a>
     <h3>Your Todos</h3>
     <ul>
       <% todos.forEach((todo) => { %>
-        <a href="/updateTodo/<%= todo.id %>"><li><%= todo.name %> - <%= todo.type %> - <%= todo.status %></li></a>
+        <li><%= todo.name %> - <%= todo.type %> - <%= todo.status %></li>
       <% }); %>
     </ul>
   </body>

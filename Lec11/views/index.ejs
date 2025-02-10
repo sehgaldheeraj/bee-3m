@@ -9,10 +9,10 @@
   <body>
     <h1>Todo APP</h1>
     <a href="/addTodo">Add a Todo</a>
-    <h3>Your Todos</h3>
+    <h3> your todos</h3>
     <ul>
       <% todos.forEach((todo) => { %>
-        <li><%= todo.name %> - <%= todo.type %> - <%= todo.status %></li>
+        <a href="/updateTodo/<%= todo.id %>"><li><%= todo.name %> - <%= todo.type %> - <%= todo.status %></li></a>
       <% }); %>
     </ul>
   </body>
