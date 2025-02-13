@@ -1,3 +1,4 @@
+//const Todo = require("../routes/todos.route");
 async function getTodo(req, res) {
   try {
     const todos = await Todo.getTodos();
