@@ -8,11 +8,18 @@ const {
 
 router.get("/", getTodo);
 
-router.get("/addTodo", (req, res) => {
-  res.render("addTodo");
-});
+//router.get("/:id", getTodoById);
+
+router.get("/new", (req, res) => res.render("addTodo"));
 
 router.post("/", addTodo);
 
+router.get("/:id/edit", (req, res) =>
+  res.render("updateTodo", { id: req.params.id })
+);
+
 router.patch("/:id", updateTodo);
+
+//router.delete("/:id", deleteTodo);
+
 module.exports = router;

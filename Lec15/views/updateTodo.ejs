@@ -7,10 +7,13 @@
 </head>
 <body>
     <h3>Update Todo Status</h3>
-    <form method="patch" action="/v1/todo">
+    <form method="post" action="/v1/todo?/<%= id %>_method=patch">
         <label for="status">Enter Updated status</label>
         <input type="text" name="status"></input>
         <button type="submit">Update Todo</button>
+    </form>
+    <form method="post" action="/v1/todo?/<%= id %>_method=delete">
+        <button type="submit">Delete This Todo</button>
     </form>
 </body>
 </html>

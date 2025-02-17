@@ -1,0 +1,11 @@
+REQUEST                | DESCRIPTION
+GET    /blogs          | Read all the blogs from DB
+GET    /blogs/:id      | Read a blog by id
+GET    /blogs/new      | Render a form that adds new blog
+POST   /blogs          | Creates a new blog
+GET    /blogs/:id/edit | Render a form that updates a blog
+PATCH  /blogs/:id      | Updates the specific blog
+DELETE /blogs/:id      | Deletes the specific blog
+  
+
+  

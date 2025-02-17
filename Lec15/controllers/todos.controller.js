@@ -30,7 +30,7 @@ async function addTodo(req, res) {
 
     //await Todo.create(name, desc, category, state );
     //Todo.insertMany([{}, {}, {}]);
-    return res.status(201).send({ message: "Todo added successfully" });
+    return res.status(201).redirect("/v1/todo");
   } catch (err) {
     res
       .status(500)
@@ -45,7 +45,7 @@ const updateTodo = async (req, res) => {
   try {
     //await Todo.updateTodo(id, status);
     await Todo.findByIdAndUpdate(id, { status: status });
-    return res.status(200).send({ message: "Todo Updated successfully" });
+    return res.status(200).redirect("/v1/todo");
   } catch (err) {
     res
       .status(500)
