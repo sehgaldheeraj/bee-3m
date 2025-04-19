@@ -7,7 +7,7 @@ const Product = require("../models/product.model");
  *        for adding a product to the DB
  * TASK2: Show all products on UI gracefully
  */
-router.get("/addProduct", (req, res) => {
+router.get("/new", (req, res) => {
   res.render("addProduct");
 });
 //2: ADD PRODUCT : Adds product having data in req.body
@@ -15,7 +15,8 @@ router.post("/", async (req, res) => {
   const { name, desc, price, quantity, category } = req.body;
   try {
     await Product.create({ name, desc, price, quantity, category });
-    res.status(201).send({ message: "Product added successfully" });
+    //res.status(201).send({ message: "Product added successfully" });
+    res.redirect("/v1/products");
   } catch (err) {
     res
       .status(500)
@@ -32,7 +33,7 @@ router.get("/", async (req, res) => {
     }
     const products = await Product.find();
     //res.status(200).send({ products: products });
-    res.render("products");
+    res.render("products", { products });
   } catch (err) {
     res
       .status(500)
@@ -40,8 +41,41 @@ router.get("/", async (req, res) => {
   }
 });
 //4: GET PRODUCT BY ID
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await Product.findById(id);
+    res.render("product", { product });
+  } catch (err) {
+    res
+      .status(500)
+      .send({ message: "Internal Server Error", err: err.message });
+  }
+});
 //5: UPDATE PRODUCT DATA (View)
+router.get(":id/edit", (req, res) => {
+  const { id } = req.params;
+  res.render("updateProduct", { id });
+});
 //6: UPDATE PRODUCT DATA
+router.patch("/:id", async (req, res) => {
+  const { id } = req.params;
+  const { name, desc, price, quantity, category } = req.body;
+  try {
+    await Product.findByIdAndUpdate(id, {
+      name: name,
+      desc: desc,
+      price: price,
+      quantity: quantity,
+      category: category,
+    });
+    res.redirect("/v1/products");
+  } catch (err) {
+    res
+      .status(500)
+      .send({ message: "Internal Server Error", err: err.message });
+  }
+});
 //7: DELETE PRODUCT
 
 module.exports = router;

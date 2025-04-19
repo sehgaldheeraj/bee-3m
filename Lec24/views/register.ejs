@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST" action="/v1/users/register">
+        <div>
+        <label for="fullname">Name</label>
+        <input type="text" name="fullname" placeholder="Enter your full name"></input>
+        </div>
+        <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter your email"></input>
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="phone" name="phone" placeholder="Enter your Phone"></input>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your Password(Min 6 characters)"></input>
+    </div>
+    <div>
+        <label for="role">Name</label>
+        <input type="text" name="role" placeholder="Enter your role"></input>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <h5>Already Registered? <a href="/v1/users/login">Login here</a></h5>
+</body>
+</html>

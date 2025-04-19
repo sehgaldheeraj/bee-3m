@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Update Product</h3>
+    <form method="POST" action="/v1/products/<%= product.id %>/?_method=patch">
+      <div>
+        <label for="name">Product Name</label>
+        <input type="text" name="name" value="<%= product.name %>" placeholder="Enter Product Name" />
+      </div>
+      <div>
+        <label for="desc">Product's Description</label>
+        <input
+          type="text"
+          name="desc"
+          value="<%= product.desc %>"
+          placeholder="Enter Product Description"
+        />
+      </div>
+      <div>
+        <label for="price">Product Price</label>
+        <input type="number" name="price" value="<%= product.price %>" placeholder="Enter Product's Price" />
+      </div>
+      <div>
+        <label for="quantity">Product's quantity</label>
+        <input
+          type="number"
+          name="quantity"
+          value="<%= product.quantity %>"
+          placeholder="Enter Product's quantity'"
+        />
+      </div>
+      <div>
+        <label for="category">Product category</label>
+        <select name="category" id="">
+          <option value="apparels" <%= product.category == "apparels"? "selected":""%>>Apparels</option>
+          <option value="electronics" <%= product.category == "electronics"? "selected":""%>>Electronics</option>
+          <option value="cosmetics" <%= product.category == "cosmetics"? "selected":""%>>Cosmetics</option>
+        </select>
+      </div>
+      <div>
+        <label for="image">Product Image</label>
+        <input type="file" name="image" />
+      </div>
+      <button type="submit">Update Product</button>
+    </form>
+  </body>
+</html>
